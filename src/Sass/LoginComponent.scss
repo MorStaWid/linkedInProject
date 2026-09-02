@@ -1,0 +1,42 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 2rem;
+}
+
+.auth-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.common-input {
+  width: 320px;
+  height: 40px;
+  padding: 0 12px;
+  background-color: #3d3d3d;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+
+  &::placeholder {
+    color: white;
+    opacity: 0.85;
+  }
+}
+
+.login-btn {
+  width: auto;
+  min-width: 160px;
+  height: 40px;
+  padding: 0 16px;
+  cursor: pointer;
+  background-color: #212121;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
