@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
+//Firebase configs
 const firebaseConfig = {
   apiKey: "AIzaSyDjnIgbjckPMpc9sVKVEn1vwAZmPuDU3zk",
   authDomain: "linkedinproject-f53fa.firebaseapp.com",

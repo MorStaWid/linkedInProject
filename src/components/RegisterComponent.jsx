@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { LoginAPI, GoogleSignInAPI } from "../api/AuthAPI";
+import { RegisterAPI, GoogleSignInAPI } from "../api/AuthAPI";
 import "../Sass/LoginComponent.scss";
 import LinkedinLogo from "../assets/linkedinLogo.svg";
 import GoogleButtonImport from "react-google-button";
 
 const GoogleButton = GoogleButtonImport.default || GoogleButtonImport;
 
-export default function LoginComponent() {
+export default function RegisterComponent() {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({});
 
   const login = async () => {
     try {
-      let res = await LoginAPI(credentials.email, credentials.password);
+      let res = await RegisterAPI(credentials.email, credentials.password);
       console.log(res);
-      toast.success("Signed In to LinkedIn!");
+      toast.success("Account Created!");
       navigate('/home');
     } catch (err) {
       console.error(err);
-      toast.error("Please check your credentials");
+      toast.error("Cannot Create your Account");
     }
   };
 
@@ -33,8 +33,7 @@ export default function LoginComponent() {
     <div className="login-wrapper">
       <img src={LinkedinLogo} className="linkedinLogo" alt="LinkedIn logo" />
       <div className="login-wrapper-inner">
-        <h1 className="heading">Sign in</h1>
-        <p className="sub-heading">Stay updated on your professional world</p>
+        <h1 className="heading">Make the most of your professional life</h1>
         <div className="auth-inputs">
           <input
             className="common-input"
@@ -42,7 +41,7 @@ export default function LoginComponent() {
               setCredentials({ ...credentials, email: e.target.value })
             }
             type="email"
-            placeholder="Email or Phone"
+            placeholder="Email or phone number"
           />
           <input
             className="common-input"
@@ -50,20 +49,20 @@ export default function LoginComponent() {
               setCredentials({ ...credentials, password: e.target.value })
             }
             type="password"
-            placeholder="Password"
+            placeholder="Password (6 or more characters)"
           />
         </div>
         <button onClick={login} className="login-btn">
-          Sign in
+          Agree & Join
         </button>
         <hr className="hr-text" data-content="or" />
         <div className="google-btn-container">
           <GoogleButton className="google-btn" onClick={googleSignIn} />
 
           <p className="go-to-signup">
-            New to LinkedIn?{" "}
-            <span className="join-now" onClick={() => navigate("/register")}>
-              Join now
+            Already on LinkedIn?{" "}
+            <span className="join-now" onClick={() => navigate("/login")}>
+              Sign in
             </span>
           </p>
         </div>
