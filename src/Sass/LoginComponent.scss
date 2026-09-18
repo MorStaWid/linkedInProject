@@ -12,7 +12,10 @@ $linkedinBlue3: #004c75;
   background-color: white !important;
   height: 100vh;
   .login-wrapper-inner{
-    margin-left:200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .heading {
     
@@ -116,7 +119,10 @@ $linkedinBlue3: #004c75;
 }
 
 .google-btn-container {
-  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .google-btn{
     width: 300px !important;

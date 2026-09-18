@@ -1,0 +1,97 @@
+.topbar-main {
+  width: 100%;
+  height: 70px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.linkedin-logo {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.react-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 28px;
+  flex: 1;
+  min-width: 0;
+}
+
+.react-icon {
+  width: 26px;
+  height: 26px;
+  color: #666666;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: #000000;
+  }
+}
+
+.user-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .topbar-main {
+    height: 60px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+
+  .linkedin-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .react-icons {
+    gap: 16px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .react-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .user-logo {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .react-icons {
+    gap: 12px;
+  }
+
+  .react-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
